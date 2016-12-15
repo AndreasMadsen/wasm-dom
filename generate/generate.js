@@ -3,9 +3,12 @@
 const fs = require('fs');
 const path = require('path');
 
+const Include = require('./cpp/include.js');
+
 const structures = {
   'dictionary': require('./structures/dictionary.js'),
   'interface': require('./structures/interface.js'),
+  'callback interface': require('./structures/interface.js'),
   'enum': require('./structures/enum.js')
 };
 
@@ -16,34 +19,26 @@ const webIDL = JSON.parse(
   )
 );
 
-const headerFile = fs.openSync(
-  path.resolve(__dirname, '..', 'build', 'dom.hpp'),
-  'w'
-);
-
-fs.writeSync(headerFile, `\
-#pragma once
-#include <string>
-#include <vector>
-
-namespace dom {
-
-// === TEMP ===
-template<typename T>
-class optional;
-
-typedef void* any;
-// === TEMP ===
-\n`);
+const main = new Include();
 
 for (const fragment of webIDL) {
   if (structures.hasOwnProperty(fragment.type)) {
     const Structure = structures[fragment.type];
     const structure = new Structure(fragment);
 
-    fs.writeSync(headerFile, structure.header() + '\n');
+    fs.writeFileSync(
+      path.resolve(__dirname, '..', 'build', 'dom', structure.name.toLowerCase() + '.hpp'),
+      structure.header()
+    );
+
+    main.addDependency({
+      name: 'dom/' + structure.name.toLowerCase(),
+      format: false
+    });
   }
 }
 
-fs.writeSync(headerFile, '} // namespace dom\n');
-fs.closeSync(headerFile);
+fs.writeFileSync(
+  path.resolve(__dirname, '..', 'build', 'dom.hpp'),
+  '#pragma once\n\n' + main.header()
+);

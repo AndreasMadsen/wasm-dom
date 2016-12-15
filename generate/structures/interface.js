@@ -2,22 +2,27 @@
 
 const assert = require('assert');
 const Class = require('../cpp').Class;
+const Include = require('../cpp').Include;
 
 const Type = require('./_type.js');
+const Argument = require('./_argument.js');
 const Structure = require('./_structure.js');
 const DefaultValue = require('./_default.js');
 const Value = require('./_value.js');
 
 class Interface extends Structure {
   constructor(content) {
-    assert.equal(content.type, 'interface');
+    assert.ok(['interface', 'callback interface'].includes(content.type));
+
     const cls = new Class(content.name, content.inheritance);
+    const include = new Include(content.name);
+    include.addDependency({name: content.inheritance});
 
     for (const member of content.members) {
       if (member.type === 'attribute') {
         cls.addAttribute({
           name: member.name,
-          type: new Type(member.idlType),
+          type: new Type(member.idlType, include),
           readonly: member.readonly,
           defaultValue: new DefaultValue(member.default)
         });
@@ -26,20 +31,17 @@ class Interface extends Structure {
         if (member.name) {
           cls.addMethod({
             name: member.name,
-            type: new Type(member),
-            args: (member.arguments || []).map((arg) => ({
-              name: arg.name,
-              optional: arg.optional,
-              type: new Type(arg.idlType),
-              defaultValue: new DefaultValue(arg.default)
-            }))
+            type: new Type(member, include),
+            args: (member.arguments || []).map(
+              (arg) => new Argument(arg, include)
+            )
           });
         }
       } else if (member.type === 'const') {
         assert.equal(member.nullable, false);
         cls.addConst({
           name: member.name,
-          type: new Type(member),
+          type: new Type(member, include),
           value: new Value(member.value)
         })
       } else if (member.type === 'iterable') {
@@ -49,7 +51,7 @@ class Interface extends Structure {
       }
     }
 
-    super(cls);
+    super(content.name, cls, include);
   }
 }
 

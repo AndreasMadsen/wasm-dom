@@ -52,13 +52,7 @@ class Class {
     if (this.methods.size > 0) str += '  // methods\n';
     for (const [name, descriptor] of this.methods) {
       str += `  const ${descriptor.type} ${name}(`
-      str += descriptor.args.map(function (arg) {
-        let argstr = `const ${arg.type} ${arg.name}`;
-        if (arg.defaultValue.exists) {
-          argstr += ` = ${arg.defaultValue}`;
-        }
-        return argstr;
-      }).join(', ');
+      str += descriptor.args.join(', ');
       str += `);\n`;
     }
 

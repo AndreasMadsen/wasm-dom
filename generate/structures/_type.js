@@ -6,11 +6,14 @@ const WebIDL_TO_CPP = {
   'boolean': 'bool',
   'DOMString': 'std::string',
   'USVString': 'std::string',
-  'DOMTimeStamp': 'long int'
+  'DOMTimeStamp': 'long int',
+  'unsigned long': 'unsigned long',
+  'unsigned short': 'unsigned short',
+  'void': 'void'
 }
 
 class Type {
-  constructor(idlType) {
+  constructor(idlType, include) {
     assert.ok(idlType.idlType);
 
     this.sequence = !!idlType.sequence;
@@ -20,11 +23,16 @@ class Type {
     this.union = !!idlType.union;
 
     if (this.union) {
-      this.type = idlType.idlType.map((item) => new Type(item));
+      this.type = idlType.idlType.map((item) => new Type(item, include));
     } else if (typeof idlType.idlType === 'object') {
-      this.type = new Type(idlType.idlType);
+      this.type = new Type(idlType.idlType, include);
     } else {
       this.type = idlType.idlType;
+
+      // if it is not a native type
+      if (!WebIDL_TO_CPP.hasOwnProperty(this.type)) {
+        include.addDependency({name: this.type});
+      }
     }
   }
 
