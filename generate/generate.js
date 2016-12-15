@@ -5,6 +5,7 @@ const path = require('path');
 
 const structures = {
   'dictionary': require('./structures/dictionary.js'),
+  'interface': require('./structures/interface.js'),
   'enum': require('./structures/enum.js')
 };
 
@@ -26,6 +27,13 @@ fs.writeSync(headerFile, `\
 #include <vector>
 
 namespace dom {
+
+// === TEMP ===
+template<typename T>
+class optional;
+
+typedef void* any;
+// === TEMP ===
 \n`);
 
 for (const fragment of webIDL) {

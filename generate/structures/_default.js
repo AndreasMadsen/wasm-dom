@@ -1,23 +1,11 @@
 'use strict';
 
-class DefaultValue {
+const Value = require('./_value.js');
+
+class DefaultValue extends Value {
   constructor(idlDefault) {
-    this.exists = false;
-    this.value = '';
-
-    if (idlDefault) {
-      this.exists = true;
-
-      if (idlDefault.type === 'null') {
-        this.value = 'NULL'
-      } else {
-        this.value = idlDefault.value.toString();
-      }
-    }
-  }
-
-  toString() {
-    return this.value;
+    super(idlDefault);
+    this.exists = !!idlDefault;
   }
 }
 

@@ -10,7 +10,7 @@ const DefaultValue = require('./_default.js');
 class Dictionary extends Structure {
   constructor(content) {
     assert.equal(content.type, 'dictionary');
-    const struct = new Struct(content.name);
+    const struct = new Struct(content.name, content.inheritance);
 
     for (const member of content.members) {
       assert.equal(member.type, 'field');

@@ -1,20 +1,27 @@
 'use strict';
 
+const assert = require('assert');
+
 const WebIDL_TO_CPP = {
   'boolean': 'bool',
   'DOMString': 'std::string',
-  'USVString': 'std::string'
+  'USVString': 'std::string',
+  'DOMTimeStamp': 'long int'
 }
 
 class Type {
   constructor(idlType) {
-    this.sequence = idlType.sequence;
-    this.generic = idlType.generic;
-    this.nullable = idlType.nullable;
-    this.array = idlType.array;
-    this.union = idlType.union;
+    assert.ok(idlType.idlType);
 
-    if (typeof idlType.idlType === 'object' && idlType.idlType !== null) {
+    this.sequence = !!idlType.sequence;
+    this.generic = idlType.generic || null;
+    this.nullable = !!idlType.nullable;
+    this.array = !!idlType.array;
+    this.union = !!idlType.union;
+
+    if (this.union) {
+      this.type = idlType.idlType.map((item) => new Type(item));
+    } else if (typeof idlType.idlType === 'object') {
       this.type = new Type(idlType.idlType);
     } else {
       this.type = idlType.idlType;
@@ -22,6 +29,10 @@ class Type {
   }
 
   toString() {
+    if (this.union) {
+      return `union<${this.type.join(', ')}>`;
+    }
+
     let type = this.type.toString();
     if (WebIDL_TO_CPP.hasOwnProperty(this.type)) {
       type = WebIDL_TO_CPP[this.type];

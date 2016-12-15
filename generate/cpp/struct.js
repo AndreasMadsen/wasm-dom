@@ -1,8 +1,9 @@
 'use strict';
 
 class Struct {
-  constructor(name) {
+  constructor(name, inheritance) {
     this.name = name;
+    this.inheritance = inheritance;
     this.fields = new Map();
   }
 
@@ -11,7 +12,9 @@ class Struct {
   }
 
   header() {
-    let str = `struct ${this.name} {\n`;
+    let inheritance = '';
+    if (this.inheritance !== null) inheritance = ` : ${this.inheritance}`;
+    let str = `struct ${this.name}${inheritance} {\n`;
 
     for (const [name, descriptor] of this.fields) {
       if (descriptor.defaultValue.exists) {
