@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 
+namespace dom {
+
 struct EventInit {
   bool bubbles = false;
   bool cancelable = false;
@@ -44,3 +46,5 @@ enum ShadowRootMode { open, closed };
 struct ShadowRootInit {
   ShadowRootMode mode;
 };
+
+} // namespace dom

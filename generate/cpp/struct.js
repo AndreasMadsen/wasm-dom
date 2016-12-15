@@ -14,7 +14,6 @@ class Struct {
     let str = `struct ${this.name} {\n`;
 
     for (const [name, descriptor] of this.fields) {
-      console.log(descriptor.type);
       if (descriptor.defaultValue.exists) {
         str += `  ${descriptor.type} ${name} = ${descriptor.defaultValue};\n`;
       } else {

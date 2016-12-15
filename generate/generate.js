@@ -24,6 +24,8 @@ fs.writeSync(headerFile, `\
 #pragma once
 #include <string>
 #include <vector>
+
+namespace dom {
 \n`);
 
 for (const fragment of webIDL) {
@@ -35,4 +37,5 @@ for (const fragment of webIDL) {
   }
 }
 
+fs.writeSync(headerFile, '} // namespace dom\n');
 fs.closeSync(headerFile);
