@@ -1,2 +1,3 @@
 buildtools/
+node_modules/
 .clang_complete

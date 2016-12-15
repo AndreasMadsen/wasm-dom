@@ -1,0 +1,5 @@
+[
+  { "name": "dom"  , "href": "https://dom.spec.whatwg.org/"    },
+  { "name": "html" , "href": "https://html.spec.whatwg.org/"   },
+  { "name": "cssom", "href": "https://drafts.csswg.org/cssom/" }
+]

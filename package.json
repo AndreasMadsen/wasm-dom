@@ -1,0 +1,31 @@
+{
+  "name": "wasm-dom",
+  "description": "Implements a DOM wrapper for WebAssembly",
+  "version": "1.0.0",
+  "author": "Andreas Madsen <amwebdk@gmail.com>",
+  "main": "./index.js",
+  "scripts": {
+    "test": "tap test/runner.js && eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AndreasMadsen/wasm-dom.git"
+  },
+  "keywords": [
+    "WebAssembly",
+    "dom",
+    "webidl"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "webidl-extract": "^1.0.1",
+    "request": "^2.79.0",
+    "webidl2": "^2.0.11",
+    "async": "^2.1.4"
+  },
+  "devDependencies": {
+    "tap": "^8.0.1",
+    "eslint": "^3.12.0",
+    "endpoint": "0.4.x"
+  }
+}
