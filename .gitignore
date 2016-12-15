@@ -1,3 +1,10 @@
 buildtools/
 node_modules/
 .clang_complete
+
+hello.html
+hello.js
+hello.asm.js
+hello.wasm
+hello.wast
+*.o
