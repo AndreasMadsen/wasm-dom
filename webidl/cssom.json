@@ -1,0 +1,1935 @@
+[
+  {
+    "type": "interface",
+    "name": "MediaList",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": true,
+        "inherit": false,
+        "readonly": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "mediaText",
+        "extAttrs": [
+          {
+            "name": "TreatNullAs",
+            "arguments": null,
+            "rhs": {
+              "type": "identifier",
+              "value": "EmptyString"
+            }
+          }
+        ]
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "unsigned long"
+        },
+        "name": "length",
+        "extAttrs": []
+      },
+      {
+        "type": "operation",
+        "getter": true,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "item",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "unsigned long"
+            },
+            "name": "index"
+          }
+        ],
+        "extAttrs": []
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "void"
+        },
+        "name": "appendMedium",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "medium"
+          }
+        ],
+        "extAttrs": []
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "void"
+        },
+        "name": "deleteMedium",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "medium"
+          }
+        ],
+        "extAttrs": []
+      }
+    ],
+    "inheritance": null,
+    "extAttrs": [
+      {
+        "name": "LegacyArrayClass",
+        "arguments": null
+      }
+    ]
+  },
+  {
+    "type": "interface",
+    "name": "StyleSheet",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "type",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "href",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": true,
+          "idlType": [
+            {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "Element"
+            },
+            {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "ProcessingInstruction"
+            }
+          ]
+        },
+        "name": "ownerNode",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": false,
+          "idlType": "StyleSheet"
+        },
+        "name": "parentStyleSheet",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "title",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "MediaList"
+        },
+        "name": "media",
+        "extAttrs": [
+          {
+            "name": "SameObject",
+            "arguments": null
+          },
+          {
+            "name": "PutForwards",
+            "arguments": null,
+            "rhs": {
+              "type": "identifier",
+              "value": "mediaText"
+            }
+          }
+        ]
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "boolean"
+        },
+        "name": "disabled",
+        "extAttrs": []
+      }
+    ],
+    "inheritance": null,
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSSStyleSheet",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": false,
+          "idlType": "CSSRule"
+        },
+        "name": "ownerRule",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "CSSRuleList"
+        },
+        "name": "cssRules",
+        "extAttrs": [
+          {
+            "name": "SameObject",
+            "arguments": null
+          }
+        ]
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "unsigned long"
+        },
+        "name": "insertRule",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "rule"
+          },
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "unsigned long"
+            },
+            "name": "index"
+          }
+        ],
+        "extAttrs": []
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "void"
+        },
+        "name": "deleteRule",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "unsigned long"
+            },
+            "name": "index"
+          }
+        ],
+        "extAttrs": []
+      }
+    ],
+    "inheritance": "StyleSheet",
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "StyleSheetList",
+    "partial": false,
+    "members": [
+      {
+        "type": "operation",
+        "getter": true,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": false,
+          "idlType": "StyleSheet"
+        },
+        "name": "item",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "unsigned long"
+            },
+            "name": "index"
+          }
+        ],
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "unsigned long"
+        },
+        "name": "length",
+        "extAttrs": []
+      }
+    ],
+    "inheritance": null,
+    "extAttrs": [
+      {
+        "name": "LegacyArrayClass",
+        "arguments": null
+      }
+    ]
+  },
+  {
+    "type": "interface",
+    "name": "Document",
+    "partial": true,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "StyleSheetList"
+        },
+        "name": "styleSheets",
+        "extAttrs": [
+          {
+            "name": "SameObject",
+            "arguments": null
+          }
+        ]
+      }
+    ],
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "LinkStyle",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": false,
+          "idlType": "StyleSheet"
+        },
+        "name": "sheet",
+        "extAttrs": []
+      }
+    ],
+    "inheritance": null,
+    "extAttrs": [
+      {
+        "name": "NoInterfaceObject",
+        "arguments": null
+      }
+    ]
+  },
+  {
+    "type": "implements",
+    "target": "ProcessingInstruction",
+    "implements": "LinkStyle",
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSSRuleList",
+    "partial": false,
+    "members": [
+      {
+        "type": "operation",
+        "getter": true,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": false,
+          "idlType": "CSSRule"
+        },
+        "name": "item",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "unsigned long"
+            },
+            "name": "index"
+          }
+        ],
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "unsigned long"
+        },
+        "name": "length",
+        "extAttrs": []
+      }
+    ],
+    "inheritance": null,
+    "extAttrs": [
+      {
+        "name": "LegacyArrayClass",
+        "arguments": null
+      }
+    ]
+  },
+  {
+    "type": "interface",
+    "name": "CSSRule",
+    "partial": false,
+    "members": [
+      {
+        "type": "const",
+        "nullable": false,
+        "idlType": "unsigned short",
+        "name": "STYLE_RULE",
+        "value": {
+          "type": "number",
+          "value": 1
+        },
+        "extAttrs": []
+      },
+      {
+        "type": "const",
+        "nullable": false,
+        "idlType": "unsigned short",
+        "name": "CHARSET_RULE",
+        "value": {
+          "type": "number",
+          "value": 2
+        },
+        "extAttrs": []
+      },
+      {
+        "type": "const",
+        "nullable": false,
+        "idlType": "unsigned short",
+        "name": "IMPORT_RULE",
+        "value": {
+          "type": "number",
+          "value": 3
+        },
+        "extAttrs": []
+      },
+      {
+        "type": "const",
+        "nullable": false,
+        "idlType": "unsigned short",
+        "name": "MEDIA_RULE",
+        "value": {
+          "type": "number",
+          "value": 4
+        },
+        "extAttrs": []
+      },
+      {
+        "type": "const",
+        "nullable": false,
+        "idlType": "unsigned short",
+        "name": "FONT_FACE_RULE",
+        "value": {
+          "type": "number",
+          "value": 5
+        },
+        "extAttrs": []
+      },
+      {
+        "type": "const",
+        "nullable": false,
+        "idlType": "unsigned short",
+        "name": "PAGE_RULE",
+        "value": {
+          "type": "number",
+          "value": 6
+        },
+        "extAttrs": []
+      },
+      {
+        "type": "const",
+        "nullable": false,
+        "idlType": "unsigned short",
+        "name": "MARGIN_RULE",
+        "value": {
+          "type": "number",
+          "value": 9
+        },
+        "extAttrs": []
+      },
+      {
+        "type": "const",
+        "nullable": false,
+        "idlType": "unsigned short",
+        "name": "NAMESPACE_RULE",
+        "value": {
+          "type": "number",
+          "value": 10
+        },
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "unsigned short"
+        },
+        "name": "type",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "cssText",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": false,
+          "idlType": "CSSRule"
+        },
+        "name": "parentRule",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": false,
+          "idlType": "CSSStyleSheet"
+        },
+        "name": "parentStyleSheet",
+        "extAttrs": []
+      }
+    ],
+    "inheritance": null,
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSSStyleRule",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "selectorText",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "CSSStyleDeclaration"
+        },
+        "name": "style",
+        "extAttrs": [
+          {
+            "name": "SameObject",
+            "arguments": null
+          },
+          {
+            "name": "PutForwards",
+            "arguments": null,
+            "rhs": {
+              "type": "identifier",
+              "value": "cssText"
+            }
+          }
+        ]
+      }
+    ],
+    "inheritance": "CSSRule",
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSSImportRule",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "href",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "MediaList"
+        },
+        "name": "media",
+        "extAttrs": [
+          {
+            "name": "SameObject",
+            "arguments": null
+          },
+          {
+            "name": "PutForwards",
+            "arguments": null,
+            "rhs": {
+              "type": "identifier",
+              "value": "mediaText"
+            }
+          }
+        ]
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "CSSStyleSheet"
+        },
+        "name": "styleSheet",
+        "extAttrs": [
+          {
+            "name": "SameObject",
+            "arguments": null
+          }
+        ]
+      }
+    ],
+    "inheritance": "CSSRule",
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSSGroupingRule",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "CSSRuleList"
+        },
+        "name": "cssRules",
+        "extAttrs": [
+          {
+            "name": "SameObject",
+            "arguments": null
+          }
+        ]
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "unsigned long"
+        },
+        "name": "insertRule",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "rule"
+          },
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "unsigned long"
+            },
+            "name": "index"
+          }
+        ],
+        "extAttrs": []
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "void"
+        },
+        "name": "deleteRule",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "unsigned long"
+            },
+            "name": "index"
+          }
+        ],
+        "extAttrs": []
+      }
+    ],
+    "inheritance": "CSSRule",
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSSMediaRule",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "MediaList"
+        },
+        "name": "media",
+        "extAttrs": [
+          {
+            "name": "SameObject",
+            "arguments": null
+          },
+          {
+            "name": "PutForwards",
+            "arguments": null,
+            "rhs": {
+              "type": "identifier",
+              "value": "mediaText"
+            }
+          }
+        ]
+      }
+    ],
+    "inheritance": "CSSGroupingRule",
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSSPageRule",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "selectorText",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "CSSStyleDeclaration"
+        },
+        "name": "style",
+        "extAttrs": [
+          {
+            "name": "SameObject",
+            "arguments": null
+          },
+          {
+            "name": "PutForwards",
+            "arguments": null,
+            "rhs": {
+              "type": "identifier",
+              "value": "cssText"
+            }
+          }
+        ]
+      }
+    ],
+    "inheritance": "CSSGroupingRule",
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSSMarginRule",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "name",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "CSSStyleDeclaration"
+        },
+        "name": "style",
+        "extAttrs": [
+          {
+            "name": "SameObject",
+            "arguments": null
+          },
+          {
+            "name": "PutForwards",
+            "arguments": null,
+            "rhs": {
+              "type": "identifier",
+              "value": "cssText"
+            }
+          }
+        ]
+      }
+    ],
+    "inheritance": "CSSRule",
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSSNamespaceRule",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "namespaceURI",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "prefix",
+        "extAttrs": []
+      }
+    ],
+    "inheritance": "CSSRule",
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSSStyleDeclaration",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "cssText",
+        "extAttrs": [
+          {
+            "name": "CEReactions",
+            "arguments": null
+          }
+        ]
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "unsigned long"
+        },
+        "name": "length",
+        "extAttrs": []
+      },
+      {
+        "type": "operation",
+        "getter": true,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "item",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "unsigned long"
+            },
+            "name": "index"
+          }
+        ],
+        "extAttrs": []
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "getPropertyValue",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "property"
+          }
+        ],
+        "extAttrs": []
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "getPropertyPriority",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "property"
+          }
+        ],
+        "extAttrs": []
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "void"
+        },
+        "name": "setProperty",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "property"
+          },
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [
+              {
+                "name": "TreatNullAs",
+                "arguments": null,
+                "rhs": {
+                  "type": "identifier",
+                  "value": "EmptyString"
+                }
+              }
+            ],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "value"
+          },
+          {
+            "optional": true,
+            "variadic": false,
+            "extAttrs": [
+              {
+                "name": "TreatNullAs",
+                "arguments": null,
+                "rhs": {
+                  "type": "identifier",
+                  "value": "EmptyString"
+                }
+              }
+            ],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "priority",
+            "default": {
+              "type": "string",
+              "value": ""
+            }
+          }
+        ],
+        "extAttrs": [
+          {
+            "name": "CEReactions",
+            "arguments": null
+          }
+        ]
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "void"
+        },
+        "name": "setPropertyValue",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "property"
+          },
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [
+              {
+                "name": "TreatNullAs",
+                "arguments": null,
+                "rhs": {
+                  "type": "identifier",
+                  "value": "EmptyString"
+                }
+              }
+            ],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "value"
+          }
+        ],
+        "extAttrs": [
+          {
+            "name": "CEReactions",
+            "arguments": null
+          }
+        ]
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "void"
+        },
+        "name": "setPropertyPriority",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "property"
+          },
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [
+              {
+                "name": "TreatNullAs",
+                "arguments": null,
+                "rhs": {
+                  "type": "identifier",
+                  "value": "EmptyString"
+                }
+              }
+            ],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "priority"
+          }
+        ],
+        "extAttrs": [
+          {
+            "name": "CEReactions",
+            "arguments": null
+          }
+        ]
+      },
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "removeProperty",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "property"
+          }
+        ],
+        "extAttrs": [
+          {
+            "name": "CEReactions",
+            "arguments": null
+          }
+        ]
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": true,
+          "array": false,
+          "union": false,
+          "idlType": "CSSRule"
+        },
+        "name": "parentRule",
+        "extAttrs": []
+      },
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "cssFloat",
+        "extAttrs": [
+          {
+            "name": "CEReactions",
+            "arguments": null
+          },
+          {
+            "name": "TreatNullAs",
+            "arguments": null,
+            "rhs": {
+              "type": "identifier",
+              "value": "EmptyString"
+            }
+          }
+        ]
+      }
+    ],
+    "inheritance": null,
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSSStyleDeclaration",
+    "partial": true,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "dashed_attribute",
+        "extAttrs": [
+          {
+            "name": "CEReactions",
+            "arguments": null
+          },
+          {
+            "name": "TreatNullAs",
+            "arguments": null,
+            "rhs": {
+              "type": "identifier",
+              "value": "EmptyString"
+            }
+          }
+        ]
+      }
+    ],
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "ElementCSSInlineStyle",
+    "partial": false,
+    "members": [
+      {
+        "type": "attribute",
+        "static": false,
+        "stringifier": false,
+        "inherit": false,
+        "readonly": true,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "CSSStyleDeclaration"
+        },
+        "name": "style",
+        "extAttrs": [
+          {
+            "name": "SameObject",
+            "arguments": null
+          },
+          {
+            "name": "PutForwards",
+            "arguments": null,
+            "rhs": {
+              "type": "identifier",
+              "value": "cssText"
+            }
+          }
+        ]
+      }
+    ],
+    "inheritance": null,
+    "extAttrs": [
+      {
+        "name": "NoInterfaceObject",
+        "arguments": null
+      }
+    ]
+  },
+  {
+    "type": "implements",
+    "target": "HTMLElement",
+    "implements": "ElementCSSInlineStyle",
+    "extAttrs": []
+  },
+  {
+    "type": "implements",
+    "target": "SVGElement",
+    "implements": "ElementCSSInlineStyle",
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "Window",
+    "partial": true,
+    "members": [
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": false,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "CSSStyleDeclaration"
+        },
+        "name": "getComputedStyle",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "Element"
+            },
+            "name": "elt"
+          },
+          {
+            "optional": true,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": true,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "pseudoElt"
+          }
+        ],
+        "extAttrs": [
+          {
+            "name": "NewObject",
+            "arguments": null
+          }
+        ]
+      }
+    ],
+    "extAttrs": []
+  },
+  {
+    "type": "interface",
+    "name": "CSS",
+    "partial": false,
+    "members": [
+      {
+        "type": "operation",
+        "getter": false,
+        "setter": false,
+        "creator": false,
+        "deleter": false,
+        "legacycaller": false,
+        "static": true,
+        "stringifier": false,
+        "idlType": {
+          "sequence": false,
+          "generic": null,
+          "nullable": false,
+          "array": false,
+          "union": false,
+          "idlType": "DOMString"
+        },
+        "name": "escape",
+        "arguments": [
+          {
+            "optional": false,
+            "variadic": false,
+            "extAttrs": [],
+            "idlType": {
+              "sequence": false,
+              "generic": null,
+              "nullable": false,
+              "array": false,
+              "union": false,
+              "idlType": "DOMString"
+            },
+            "name": "ident"
+          }
+        ],
+        "extAttrs": []
+      }
+    ],
+    "inheritance": null,
+    "extAttrs": []
+  }
+]
