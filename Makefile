@@ -8,17 +8,24 @@ export EMSCRIPTEN=$(EMSDK_DIR)/emscripten/incoming
 CC=$(EMSCRIPTEN)/emcc
 CXX=$(EMSCRIPTEN)/em++
 
-LDFLAGS=-s WASM=1 # linker flags
-CPPFLAGS=-s WASM=1 # shared c++ and c compiler flags
-CXXFLAGS= # c++ compiler flags
+# https://github.com/kripken/emscripten/wiki/WebAssembly
+# TODO: https://github.com/kripken/emscripten/wiki/WebAssembly-Standalone
+LDFLAGS=--bind # linker flags
+LDFLAGS+=-s WASM=1 # compile as .wasm, this is the same as BINARYEN=1
+LDFLAGS+=-s "BINARYEN_METHOD='native-wasm'" # only compile to native-wasm
+LDFLAGS+=-s BINARYEN_IMPRECISE=1 # don't care about compatibility with asm.js
+CPPFLAGS= # shared c++ and c compiler flags
+CXXFLAGS=-std=c++11 --bind # c++ compiler flags
 CFLAGS= # c compiler flags
 
 #
 # PHONY targets
 #
-.PHONY: build clean buildtools-update
+.PHONY: build lint clean buildtools-update
 
 build: hello.html
+
+lint: .clang_complete
 
 clean:
 	rm -f hello.html hello.js hello.asm.js hello.wasm hello.wast
@@ -29,7 +36,7 @@ buildtools-update:
 	make buildtools/emsdk
 
 #
-# Download buildtools
+# Setup buildtools
 #
 buildtools/:
 	mkdir buildtools
@@ -42,6 +49,9 @@ buildtools/emsdk: | buildtools/
 	buildtools/emsdk/emsdk update
 	buildtools/emsdk/emsdk install clang-incoming-64bit emscripten-incoming-64bit sdk-incoming-64bit
 	buildtools/emsdk/emsdk activate --embedded clang-incoming-64bit emscripten-incoming-64bit sdk-incoming-64bit
+
+.clang_complete:
+	 @echo "-isystem$(EMSCRIPTEN)/system/include" > .clang_complete
 
 #
 # Specific target

@@ -1,1 +1,2 @@
-buildtools
+buildtools/
+.clang_complete
