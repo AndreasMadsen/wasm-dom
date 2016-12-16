@@ -7,9 +7,10 @@
 namespace dom {
 
 class ShadowRoot : DocumentFragment {
-  // attributes
-  ShadowRootMode get_mode() const;
-  Element get_host() const;
+  public:
+    // attributes
+    ShadowRootMode get_mode() const;
+    Element get_host() const;
 };
 
 } // namespace dom

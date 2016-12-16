@@ -7,10 +7,11 @@
 namespace dom {
 
 class MutationObserver {
-  // methods
-  const void observe(const Node target, const MutationObserverInit options);
-  const void disconnect();
-  const std::vector<MutationRecord> takeRecords();
+  public:
+    // methods
+    const void observe(const Node target, const MutationObserverInit options);
+    const void disconnect();
+    const std::vector<MutationRecord> takeRecords();
 };
 
 } // namespace dom

@@ -5,11 +5,12 @@
 namespace dom {
 
 class Text : CharacterData {
-  // attributes
-  std::string get_wholeText() const;
+  public:
+    // attributes
+    std::string get_wholeText() const;
 
-  // methods
-  const Text splitText(const unsigned long offset);
+    // methods
+    const Text splitText(const unsigned long offset);
 };
 
 } // namespace dom

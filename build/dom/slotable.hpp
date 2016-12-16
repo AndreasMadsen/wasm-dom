@@ -5,8 +5,9 @@
 namespace dom {
 
 class Slotable {
-  // attributes
-  optional<HTMLSlotElement> get_assignedSlot() const;
+  public:
+    // attributes
+    optional<HTMLSlotElement> get_assignedSlot() const;
 };
 
 } // namespace dom

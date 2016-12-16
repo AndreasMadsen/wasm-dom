@@ -8,17 +8,18 @@
 namespace dom {
 
 class ParentNode {
-  // attributes
-  HTMLCollection get_children() const;
-  optional<Element> get_firstElementChild() const;
-  optional<Element> get_lastElementChild() const;
-  unsigned long get_childElementCount() const;
+  public:
+    // attributes
+    HTMLCollection get_children() const;
+    optional<Element> get_firstElementChild() const;
+    optional<Element> get_lastElementChild() const;
+    unsigned long get_childElementCount() const;
 
-  // methods
-  const void prepend(const union<Node, std::string> nodes);
-  const void append(const union<Node, std::string> nodes);
-  const optional<Element> querySelector(const std::string selectors);
-  const NodeList querySelectorAll(const std::string selectors);
+    // methods
+    const void prepend(const union<Node, std::string> nodes);
+    const void append(const union<Node, std::string> nodes);
+    const optional<Element> querySelector(const std::string selectors);
+    const NodeList querySelectorAll(const std::string selectors);
 };
 
 } // namespace dom

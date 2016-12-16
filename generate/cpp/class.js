@@ -26,22 +26,27 @@ class Class {
     if (this.inheritance !== null) inheritance = ` : ${this.inheritance}`;
     let str = `class ${this.name}${inheritance} {\n`;
 
+    // Add public statement
+    if (this.consts.size > 0 || this.attributes.size > 0 || this.methods.size > 0) {
+      str += '  public:\n';
+    }
+
     // Add static const
-    if (this.consts.size > 0) str += '  // constants\n';
+    if (this.consts.size > 0) str += '    // constants\n';
     for (const [name, descriptor] of this.consts) {
-      str += `  static const ${descriptor.type} ${name} = ${descriptor.value};\n`;
+      str += `    static const ${descriptor.type} ${name} = ${descriptor.value};\n`;
     }
     if (this.consts.size > 0 && (this.attributes.size > 0 || this.methods.size > 0)) {
       str += '\n';
     }
 
     // Add attributes
-    if (this.attributes.size > 0) str += '  // attributes\n';
+    if (this.attributes.size > 0) str += '    // attributes\n';
     for (const [name, descriptor] of this.attributes) {
-      str += `  ${descriptor.type} get_${name}() const;\n`;
+      str += `    ${descriptor.type} get_${name}() const;\n`;
 
       if (!descriptor.readonly) {
-        str += `  ${descriptor.type} set_${name}(const ${descriptor.type} ${name});\n`;
+        str += `    ${descriptor.type} set_${name}(const ${descriptor.type} ${name});\n`;
       }
     }
     if (this.attributes.size > 0 && this.methods.size > 0) {
@@ -49,9 +54,9 @@ class Class {
     }
 
     // Add methods
-    if (this.methods.size > 0) str += '  // methods\n';
+    if (this.methods.size > 0) str += '    // methods\n';
     for (const [name, descriptor] of this.methods) {
-      str += `  const ${descriptor.type} ${name}(`
+      str += `    const ${descriptor.type} ${name}(`
       str += descriptor.args.join(', ');
       str += `);\n`;
     }

@@ -5,11 +5,12 @@
 namespace dom {
 
 class NodeList {
-  // attributes
-  unsigned long get_length() const;
+  public:
+    // attributes
+    unsigned long get_length() const;
 
-  // methods
-  const optional<Node> item(const unsigned long index);
+    // methods
+    const optional<Node> item(const unsigned long index);
 };
 
 } // namespace dom

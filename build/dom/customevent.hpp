@@ -6,11 +6,12 @@
 namespace dom {
 
 class CustomEvent : Event {
-  // attributes
-  any get_detail() const;
+  public:
+    // attributes
+    any get_detail() const;
 
-  // methods
-  const void initCustomEvent(const std::string type, const bool bubbles, const bool cancelable, const any detail);
+    // methods
+    const void initCustomEvent(const std::string type, const bool bubbles, const bool cancelable, const any detail);
 };
 
 } // namespace dom

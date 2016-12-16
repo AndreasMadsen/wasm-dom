@@ -5,8 +5,9 @@
 namespace dom {
 
 class NonElementParentNode {
-  // methods
-  const optional<Element> getElementById(const std::string elementId);
+  public:
+    // methods
+    const optional<Element> getElementById(const std::string elementId);
 };
 
 } // namespace dom

@@ -6,17 +6,18 @@
 namespace dom {
 
 class NodeIterator {
-  // attributes
-  Node get_root() const;
-  Node get_referenceNode() const;
-  bool get_pointerBeforeReferenceNode() const;
-  unsigned long get_whatToShow() const;
-  optional<NodeFilter> get_filter() const;
+  public:
+    // attributes
+    Node get_root() const;
+    Node get_referenceNode() const;
+    bool get_pointerBeforeReferenceNode() const;
+    unsigned long get_whatToShow() const;
+    optional<NodeFilter> get_filter() const;
 
-  // methods
-  const optional<Node> nextNode();
-  const optional<Node> previousNode();
-  const void detach();
+    // methods
+    const optional<Node> nextNode();
+    const optional<Node> previousNode();
+    const void detach();
 };
 
 } // namespace dom

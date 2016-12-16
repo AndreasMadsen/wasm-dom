@@ -5,8 +5,9 @@
 namespace dom {
 
 class ProcessingInstruction : CharacterData {
-  // attributes
-  std::string get_target() const;
+  public:
+    // attributes
+    std::string get_target() const;
 };
 
 } // namespace dom

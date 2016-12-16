@@ -5,12 +5,13 @@
 namespace dom {
 
 class HTMLCollection {
-  // attributes
-  unsigned long get_length() const;
+  public:
+    // attributes
+    unsigned long get_length() const;
 
-  // methods
-  const optional<Element> item(const unsigned long index);
-  const optional<Element> namedItem(const std::string name);
+    // methods
+    const optional<Element> item(const unsigned long index);
+    const optional<Element> namedItem(const std::string name);
 };
 
 } // namespace dom

@@ -5,8 +5,9 @@
 namespace dom {
 
 class EventListener {
-  // methods
-  const void handleEvent(const Event event);
+  public:
+    // methods
+    const void handleEvent(const Event event);
 };
 
 } // namespace dom
