@@ -46,7 +46,7 @@ class Argument {
     if (this.optional) {
       str += `optional<${this.type}>`;
     } else {
-      str += this.type;
+      str += this.type.toString();
     }
 
     str += ` ${this.name}`;

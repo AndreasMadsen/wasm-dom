@@ -9,9 +9,12 @@ namespace dom {
 class ChildNode {
   public:
     // methods
-    const void before(const multiple<Node, std::string> nodes);
-    const void after(const multiple<Node, std::string> nodes);
-    const void replaceWith(const multiple<Node, std::string> nodes);
+    const void before(const Node nodes);
+    const void before(const std::string nodes);
+    const void after(const Node nodes);
+    const void after(const std::string nodes);
+    const void replaceWith(const Node nodes);
+    const void replaceWith(const std::string nodes);
     const void remove();
 };
 

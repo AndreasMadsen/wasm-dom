@@ -18,8 +18,10 @@ class ParentNode {
     unsigned long get_childElementCount() const;
 
     // methods
-    const void prepend(const multiple<Node, std::string> nodes);
-    const void append(const multiple<Node, std::string> nodes);
+    const void prepend(const Node nodes);
+    const void prepend(const std::string nodes);
+    const void append(const Node nodes);
+    const void append(const std::string nodes);
     const nullable<Element> querySelector(const std::string selectors);
     const NodeList querySelectorAll(const std::string selectors);
 };

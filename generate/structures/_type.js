@@ -43,7 +43,7 @@ class Type {
     if (this.union) {
       yield* this.type;
     } else {
-      yield this.type;
+      yield this;
     }
   }
 
