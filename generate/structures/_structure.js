@@ -10,12 +10,17 @@ class Structure {
   }
 
   header() {
-    return '#pragma once\n' +
+    const headerName = this.name.toUpperCase();
+
+    return `#ifndef WASM_DOM_${headerName}_H_\n` +
+           `#define WASM_DOM_${headerName}_H_\n` +
+           '\n' +
             this._include.header() + '\n' +
            'namespace dom {\n' +
-           '\n' + 
+           '\n' +
            this._structure.header() + '\n' +
-           '} // namespace dom\n';
+           '} // namespace dom\n' +
+           `#endif // WASM_DOM_${headerName}_H_`;
   }
 
   body() {

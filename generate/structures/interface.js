@@ -27,7 +27,6 @@ class Interface extends Structure {
           defaultValue: new DefaultValue(member.default)
         });
       } else if (member.type === 'operation') {
-        // TODO: an operator without a name?
         if (member.name) {
           cls.addMethod({
             name: member.name,
@@ -36,6 +35,8 @@ class Interface extends Structure {
               (arg) => new Argument(arg, include)
             )
           });
+        } else {
+          // TODO: an operator without a name?
         }
       } else if (member.type === 'const') {
         assert.equal(member.nullable, false);
@@ -43,7 +44,7 @@ class Interface extends Structure {
           name: member.name,
           type: new Type(member, include),
           value: new Value(member.value)
-        })
+        });
       } else if (member.type === 'iterable') {
         // TODO: what is an iterable member?
       } else {

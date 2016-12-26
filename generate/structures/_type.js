@@ -9,7 +9,8 @@ const WebIDL_TO_CPP = {
   'DOMTimeStamp': 'long int',
   'unsigned long': 'unsigned long',
   'unsigned short': 'unsigned short',
-  'void': 'void'
+  'void': 'void',
+  'any': 'any'
 }
 
 class Type {
@@ -30,24 +31,25 @@ class Type {
       this.type = idlType.idlType;
 
       // if it is not a native type
-      if (!WebIDL_TO_CPP.hasOwnProperty(this.type)) {
+      if (WebIDL_TO_CPP.hasOwnProperty(this.type)) {
+        this.type = WebIDL_TO_CPP[this.type];
+      } else {
         include.addDependency({name: this.type});
       }
     }
   }
 
   toString() {
-    if (this.union) {
-      return `union<${this.type.join(', ')}>`;
-    }
+    let type;
 
-    let type = this.type.toString();
-    if (WebIDL_TO_CPP.hasOwnProperty(this.type)) {
-      type = WebIDL_TO_CPP[this.type];
+    if (this.union) {
+      type = `multiple<${this.type.join(', ')}>`;
+    } else {
+      type = this.type.toString();
     }
 
     if (this.nullable) {
-      type = `optional<${type}>`;
+      type = `nullable<${type}>`;
     }
 
     if (this.sequence) {

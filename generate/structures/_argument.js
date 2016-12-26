@@ -20,10 +20,20 @@ class Argument {
   }
 
   toString() {
-    let str = `const ${this.type} ${this.name}`;
+    let str = 'const ';
+
+    if (this.optional) {
+      str += `optional<${this.type}>`;
+    } else {
+      str += this.type;
+    }
+
+    str += ` ${this.name}`;
+
     if (this.defaultValue.exists) {
       str += ` = ${this.defaultValue}`;
     }
+
     return str;
   }
 }
