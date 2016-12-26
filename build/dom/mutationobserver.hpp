@@ -11,7 +11,8 @@ namespace dom {
 class MutationObserver {
   public:
     // methods
-    const void observe(const Node target, const optional<MutationObserverInit> options);
+    const void observe(const Node target);
+    const void observe(const Node target, const MutationObserverInit options);
     const void disconnect();
     const std::vector<MutationRecord> takeRecords();
 };

@@ -41,21 +41,28 @@ class Document : public Node {
     const HTMLCollection getElementsByTagName(const std::string qualifiedName);
     const HTMLCollection getElementsByTagNameNS(const nullable<std::string> ns, const std::string localName);
     const HTMLCollection getElementsByClassName(const std::string classNames);
-    const Element createElement(const std::string localName, const optional<ElementCreationOptions> options);
-    const Element createElementNS(const nullable<std::string> ns, const std::string qualifiedName, const optional<ElementCreationOptions> options);
+    const Element createElement(const std::string localName);
+    const Element createElement(const std::string localName, const ElementCreationOptions options);
+    const Element createElementNS(const nullable<std::string> ns, const std::string qualifiedName);
+    const Element createElementNS(const nullable<std::string> ns, const std::string qualifiedName, const ElementCreationOptions options);
     const DocumentFragment createDocumentFragment();
     const Text createTextNode(const std::string data);
     const CDATASection createCDATASection(const std::string data);
     const Comment createComment(const std::string data);
     const ProcessingInstruction createProcessingInstruction(const std::string target, const std::string data);
-    const Node importNode(const Node node, const optional<bool> deep = false);
+    const Node importNode(const Node node);
+    const Node importNode(const Node node, const bool deep = false);
     const Node adoptNode(const Node node);
     const Attr createAttribute(const std::string localName);
     const Attr createAttributeNS(const nullable<std::string> ns, const std::string qualifiedName);
     const Event createEvent(const std::string interface);
     const Range createRange();
-    const NodeIterator createNodeIterator(const Node root, const optional<unsigned long> whatToShow = 4294967295, const optional<nullable<NodeFilter>> filter = NULL);
-    const TreeWalker createTreeWalker(const Node root, const optional<unsigned long> whatToShow = 4294967295, const optional<nullable<NodeFilter>> filter = NULL);
+    const NodeIterator createNodeIterator(const Node root);
+    const NodeIterator createNodeIterator(const Node root, const unsigned long whatToShow = 4294967295);
+    const NodeIterator createNodeIterator(const Node root, const unsigned long whatToShow = 4294967295, const nullable<NodeFilter> filter = NULL);
+    const TreeWalker createTreeWalker(const Node root);
+    const TreeWalker createTreeWalker(const Node root, const unsigned long whatToShow = 4294967295);
+    const TreeWalker createTreeWalker(const Node root, const unsigned long whatToShow = 4294967295, const nullable<NodeFilter> filter = NULL);
 };
 
 } // namespace dom

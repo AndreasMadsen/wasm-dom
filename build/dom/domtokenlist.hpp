@@ -17,7 +17,8 @@ class DOMTokenList {
     const bool contains(const std::string token);
     const void add(const std::string tokens);
     const void remove(const std::string tokens);
-    const bool toggle(const std::string token, const optional<bool> force);
+    const bool toggle(const std::string token);
+    const bool toggle(const std::string token, const bool force);
     const void replace(const std::string token, const std::string newToken);
     const bool supports(const std::string token);
 };

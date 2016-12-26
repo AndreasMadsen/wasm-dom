@@ -12,8 +12,10 @@ class DOMImplementation {
   public:
     // methods
     const DocumentType createDocumentType(const std::string qualifiedName, const std::string publicId, const std::string systemId);
-    const XMLDocument createDocument(const nullable<std::string> ns, const std::string qualifiedName, const optional<nullable<DocumentType>> doctype = NULL);
-    const Document createHTMLDocument(const optional<std::string> title);
+    const XMLDocument createDocument(const nullable<std::string> ns, const std::string qualifiedName);
+    const XMLDocument createDocument(const nullable<std::string> ns, const std::string qualifiedName, const nullable<DocumentType> doctype = NULL);
+    const Document createHTMLDocument();
+    const Document createHTMLDocument(const std::string title);
     const bool hasFeature();
 };
 

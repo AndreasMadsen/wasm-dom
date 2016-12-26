@@ -12,10 +12,12 @@ namespace dom {
 class EventTarget {
   public:
     // methods
-    const void addEventListener(const std::string type, const nullable<EventListener> callback, const optional<AddEventListenerOptions> options);
-    const void addEventListener(const std::string type, const nullable<EventListener> callback, const optional<bool> options);
-    const void removeEventListener(const std::string type, const nullable<EventListener> callback, const optional<EventListenerOptions> options);
-    const void removeEventListener(const std::string type, const nullable<EventListener> callback, const optional<bool> options);
+    const void addEventListener(const std::string type, const nullable<EventListener> callback);
+    const void addEventListener(const std::string type, const nullable<EventListener> callback, const AddEventListenerOptions options);
+    const void addEventListener(const std::string type, const nullable<EventListener> callback, const bool options);
+    const void removeEventListener(const std::string type, const nullable<EventListener> callback);
+    const void removeEventListener(const std::string type, const nullable<EventListener> callback, const EventListenerOptions options);
+    const void removeEventListener(const std::string type, const nullable<EventListener> callback, const bool options);
     const bool dispatchEvent(const Event event);
 };
 

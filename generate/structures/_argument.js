@@ -41,15 +41,7 @@ class Argument {
   }
 
   toString() {
-    let str = 'const ';
-
-    if (this.optional) {
-      str += `optional<${this.type}>`;
-    } else {
-      str += this.type.toString();
-    }
-
-    str += ` ${this.name}`;
+    let str = `const ${this.type} ${this.name}`;
 
     if (this.defaultValue.exists) {
       str += ` = ${this.defaultValue}`;

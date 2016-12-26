@@ -51,10 +51,12 @@ class Node : public EventTarget {
     nullable<std::string> set_textContent(const nullable<std::string> textContent);
 
     // methods
-    const Node getRootNode(const optional<GetRootNodeOptions> options);
+    const Node getRootNode();
+    const Node getRootNode(const GetRootNodeOptions options);
     const bool hasChildNodes();
     const void normalize();
-    const Node cloneNode(const optional<bool> deep = false);
+    const Node cloneNode();
+    const Node cloneNode(const bool deep = false);
     const bool isEqualNode(const nullable<Node> otherNode);
     const bool isSameNode(const nullable<Node> otherNode);
     const unsigned short compareDocumentPosition(const Node other);

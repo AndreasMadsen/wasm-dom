@@ -31,7 +31,8 @@ class Range {
     const void setStartAfter(const Node node);
     const void setEndBefore(const Node node);
     const void setEndAfter(const Node node);
-    const void collapse(const optional<bool> toStart = false);
+    const void collapse();
+    const void collapse(const bool toStart = false);
     const void selectNode(const Node node);
     const void selectNodeContents(const Node node);
     const short compareBoundaryPoints(const unsigned short how, const Range sourceRange);
