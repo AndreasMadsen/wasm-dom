@@ -1,5 +1,9 @@
 #pragma once
 
+#if __cplusplus < 201103L
+#error WASM-DOM requires building with -std=c++11 or newer!
+#else
+
 #include "dom/event.hpp"
 #include "dom/eventinit.hpp"
 #include "dom/customevent.hpp"

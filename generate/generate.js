@@ -40,5 +40,11 @@ for (const fragment of webIDL) {
 
 fs.writeFileSync(
   path.resolve(__dirname, '..', 'build', 'dom.hpp'),
-  '#pragma once\n\n' + main.header()
+  '#pragma once\n' +
+  '\n' +
+  '#if __cplusplus < 201103L\n' +
+  '#error WASM-DOM requires building with -std=c++11 or newer!\n' +
+  '#else\n' +
+  '\n' +
+  main.header()
 );
