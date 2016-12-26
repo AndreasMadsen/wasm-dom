@@ -10,6 +10,8 @@ class ArgumentList {
   }
 
   *[Symbol.iterator]() {
+    // TODO: support optional arguments
+
     // construct a list of iterables, these may be reset later
     const iterators = this.args.map((arg) => arg[Symbol.iterator]());
 
