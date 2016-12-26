@@ -39,6 +39,14 @@ class Type {
     }
   }
 
+  *[Symbol.iterator]() {
+    if (this.union) {
+      yield* this.type;
+    } else {
+      yield this.type;
+    }
+  }
+
   toString() {
     let type;
 

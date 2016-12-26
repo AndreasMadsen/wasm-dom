@@ -5,7 +5,7 @@ const Class = require('../cpp').Class;
 const Include = require('../cpp').Include;
 
 const Type = require('./_type.js');
-const Argument = require('./_argument.js');
+const ArgumentList = require('./_argument_list.js');
 const Structure = require('./_structure.js');
 const DefaultValue = require('./_default.js');
 const Value = require('./_value.js');
@@ -31,9 +31,7 @@ class Interface extends Structure {
           cls.addMethod({
             name: member.name,
             type: new Type(member, include),
-            args: (member.arguments || []).map(
-              (arg) => new Argument(arg, include)
-            )
+            args: new ArgumentList(member.arguments, include)
           });
         } else {
           // TODO: an operator without a name?

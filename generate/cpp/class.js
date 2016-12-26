@@ -56,9 +56,11 @@ class Class {
     // Add methods
     if (this.methods.size > 0) str += '    // methods\n';
     for (const [name, descriptor] of this.methods) {
-      str += `    const ${descriptor.type} ${name}(`
-      str += descriptor.args.join(', ');
-      str += `);\n`;
+      for (const args of descriptor.args) {
+        str += `    const ${descriptor.type} ${name}(`
+        str += args.join(', ');
+        str += `);\n`;
+      }
     }
 
     return str + '};\n';
