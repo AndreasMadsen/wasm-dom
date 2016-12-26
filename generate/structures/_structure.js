@@ -20,7 +20,7 @@ class Structure {
            '\n' +
            this._structure.header() + '\n' +
            '} // namespace dom\n' +
-           `#endif // WASM_DOM_${headerName}_H_`;
+           `#endif // WASM_DOM_${headerName}_H_\n`;
   }
 
   body() {
