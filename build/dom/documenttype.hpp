@@ -6,7 +6,7 @@
 
 namespace dom {
 
-class DocumentType : Node {
+class DocumentType : public Node {
   public:
     // attributes
     std::string get_name() const;

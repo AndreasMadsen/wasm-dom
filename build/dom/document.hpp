@@ -22,7 +22,7 @@
 
 namespace dom {
 
-class Document : Node {
+class Document : public Node {
   public:
     // attributes
     DOMImplementation get_implementation() const;

@@ -6,7 +6,7 @@
 
 namespace dom {
 
-class Text : CharacterData {
+class Text : public CharacterData {
   public:
     // attributes
     std::string get_wholeText() const;

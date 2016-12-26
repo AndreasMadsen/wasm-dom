@@ -7,7 +7,7 @@
 
 namespace dom {
 
-class Attr : Node {
+class Attr : public Node {
   public:
     // attributes
     nullable<std::string> get_namespaceURI() const;

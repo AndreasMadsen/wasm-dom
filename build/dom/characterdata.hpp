@@ -6,7 +6,7 @@
 
 namespace dom {
 
-class CharacterData : Node {
+class CharacterData : public Node {
   public:
     // attributes
     std::string get_data() const;

@@ -10,7 +10,7 @@
 
 namespace dom {
 
-class Node : EventTarget {
+class Node : public EventTarget {
   public:
     // constants
     static const unsigned short ELEMENT_NODE = 1;

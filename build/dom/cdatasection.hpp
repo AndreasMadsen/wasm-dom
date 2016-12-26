@@ -6,7 +6,7 @@
 
 namespace dom {
 
-class CDATASection : Text {
+class CDATASection : public Text {
 };
 
 } // namespace dom

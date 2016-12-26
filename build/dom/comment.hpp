@@ -6,7 +6,7 @@
 
 namespace dom {
 
-class Comment : CharacterData {
+class Comment : public CharacterData {
 };
 
 } // namespace dom

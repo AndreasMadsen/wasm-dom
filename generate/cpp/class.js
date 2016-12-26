@@ -23,7 +23,7 @@ class Class {
 
   header() {
     let inheritance = '';
-    if (this.inheritance !== null) inheritance = ` : ${this.inheritance}`;
+    if (this.inheritance !== null) inheritance = ` : public ${this.inheritance}`;
     let str = `class ${this.name}${inheritance} {\n`;
 
     // Add public statement

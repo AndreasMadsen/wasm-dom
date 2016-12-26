@@ -6,7 +6,7 @@
 
 namespace dom {
 
-class XMLDocument : Document {
+class XMLDocument : public Document {
 };
 
 } // namespace dom

@@ -8,7 +8,7 @@
 
 namespace dom {
 
-class ShadowRoot : DocumentFragment {
+class ShadowRoot : public DocumentFragment {
   public:
     // attributes
     ShadowRootMode get_mode() const;

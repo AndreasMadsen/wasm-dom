@@ -6,7 +6,7 @@
 
 namespace dom {
 
-class CustomEvent : Event {
+class CustomEvent : public Event {
   public:
     // attributes
     any get_detail() const;

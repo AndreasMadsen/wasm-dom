@@ -6,7 +6,7 @@
 
 namespace dom {
 
-class DocumentFragment : Node {
+class DocumentFragment : public Node {
 };
 
 } // namespace dom

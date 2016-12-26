@@ -12,7 +12,7 @@
 
 namespace dom {
 
-class Element : Node {
+class Element : public Node {
   public:
     // attributes
     nullable<std::string> get_namespaceURI() const;
