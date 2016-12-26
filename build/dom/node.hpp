@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_NODE_H_
+#define WASM_DOM_NODE_H_
+
 #include "eventtarget.hpp"
 #include "document.hpp"
 #include "getrootnodeoptions.hpp"
@@ -35,35 +37,36 @@ class Node : EventTarget {
     std::string get_nodeName() const;
     std::string get_baseURI() const;
     bool get_isConnected() const;
-    optional<Document> get_ownerDocument() const;
-    optional<Node> get_parentNode() const;
-    optional<Element> get_parentElement() const;
+    nullable<Document> get_ownerDocument() const;
+    nullable<Node> get_parentNode() const;
+    nullable<Element> get_parentElement() const;
     NodeList get_childNodes() const;
-    optional<Node> get_firstChild() const;
-    optional<Node> get_lastChild() const;
-    optional<Node> get_previousSibling() const;
-    optional<Node> get_nextSibling() const;
-    optional<std::string> get_nodeValue() const;
-    optional<std::string> set_nodeValue(const optional<std::string> nodeValue);
-    optional<std::string> get_textContent() const;
-    optional<std::string> set_textContent(const optional<std::string> textContent);
+    nullable<Node> get_firstChild() const;
+    nullable<Node> get_lastChild() const;
+    nullable<Node> get_previousSibling() const;
+    nullable<Node> get_nextSibling() const;
+    nullable<std::string> get_nodeValue() const;
+    nullable<std::string> set_nodeValue(const nullable<std::string> nodeValue);
+    nullable<std::string> get_textContent() const;
+    nullable<std::string> set_textContent(const nullable<std::string> textContent);
 
     // methods
-    const Node getRootNode(const GetRootNodeOptions options);
+    const Node getRootNode(const optional<GetRootNodeOptions> options);
     const bool hasChildNodes();
     const void normalize();
-    const Node cloneNode(const bool deep = false);
-    const bool isEqualNode(const optional<Node> otherNode);
-    const bool isSameNode(const optional<Node> otherNode);
+    const Node cloneNode(const optional<bool> deep = false);
+    const bool isEqualNode(const nullable<Node> otherNode);
+    const bool isSameNode(const nullable<Node> otherNode);
     const unsigned short compareDocumentPosition(const Node other);
-    const bool contains(const optional<Node> other);
-    const optional<std::string> lookupPrefix(const optional<std::string> ns);
-    const optional<std::string> lookupNamespaceURI(const optional<std::string> prefix);
-    const bool isDefaultNamespace(const optional<std::string> ns);
-    const Node insertBefore(const Node node, const optional<Node> child);
+    const bool contains(const nullable<Node> other);
+    const nullable<std::string> lookupPrefix(const nullable<std::string> ns);
+    const nullable<std::string> lookupNamespaceURI(const nullable<std::string> prefix);
+    const bool isDefaultNamespace(const nullable<std::string> ns);
+    const Node insertBefore(const Node node, const nullable<Node> child);
     const Node appendChild(const Node node);
     const Node replaceChild(const Node node, const Node child);
     const Node removeChild(const Node child);
 };
 
 } // namespace dom
+#endif // WASM_DOM_NODE_H_

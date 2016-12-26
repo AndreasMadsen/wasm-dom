@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_TREEWALKER_H_
+#define WASM_DOM_TREEWALKER_H_
+
 #include "node.hpp"
 #include "nodefilter.hpp"
 #include "../_basic.hpp"
@@ -10,18 +12,19 @@ class TreeWalker {
     // attributes
     Node get_root() const;
     unsigned long get_whatToShow() const;
-    optional<NodeFilter> get_filter() const;
+    nullable<NodeFilter> get_filter() const;
     Node get_currentNode() const;
     Node set_currentNode(const Node currentNode);
 
     // methods
-    const optional<Node> parentNode();
-    const optional<Node> firstChild();
-    const optional<Node> lastChild();
-    const optional<Node> previousSibling();
-    const optional<Node> nextSibling();
-    const optional<Node> previousNode();
-    const optional<Node> nextNode();
+    const nullable<Node> parentNode();
+    const nullable<Node> firstChild();
+    const nullable<Node> lastChild();
+    const nullable<Node> previousSibling();
+    const nullable<Node> nextSibling();
+    const nullable<Node> previousNode();
+    const nullable<Node> nextNode();
 };
 
 } // namespace dom
+#endif // WASM_DOM_TREEWALKER_H_

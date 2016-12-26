@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_CHARACTERDATA_H_
+#define WASM_DOM_CHARACTERDATA_H_
+
 #include "node.hpp"
 #include "../_basic.hpp"
 
@@ -20,3 +22,4 @@ class CharacterData : Node {
 };
 
 } // namespace dom
+#endif // WASM_DOM_CHARACTERDATA_H_

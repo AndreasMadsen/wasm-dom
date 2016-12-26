@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_DOCUMENT_H_
+#define WASM_DOM_DOCUMENT_H_
+
 #include "node.hpp"
 #include "domimplementation.hpp"
 #include "documenttype.hpp"
@@ -32,28 +34,29 @@ class Document : Node {
     std::string get_charset() const;
     std::string get_inputEncoding() const;
     std::string get_contentType() const;
-    optional<DocumentType> get_doctype() const;
-    optional<Element> get_documentElement() const;
+    nullable<DocumentType> get_doctype() const;
+    nullable<Element> get_documentElement() const;
 
     // methods
     const HTMLCollection getElementsByTagName(const std::string qualifiedName);
-    const HTMLCollection getElementsByTagNameNS(const optional<std::string> ns, const std::string localName);
+    const HTMLCollection getElementsByTagNameNS(const nullable<std::string> ns, const std::string localName);
     const HTMLCollection getElementsByClassName(const std::string classNames);
-    const Element createElement(const std::string localName, const ElementCreationOptions options);
-    const Element createElementNS(const optional<std::string> ns, const std::string qualifiedName, const ElementCreationOptions options);
+    const Element createElement(const std::string localName, const optional<ElementCreationOptions> options);
+    const Element createElementNS(const nullable<std::string> ns, const std::string qualifiedName, const optional<ElementCreationOptions> options);
     const DocumentFragment createDocumentFragment();
     const Text createTextNode(const std::string data);
     const CDATASection createCDATASection(const std::string data);
     const Comment createComment(const std::string data);
     const ProcessingInstruction createProcessingInstruction(const std::string target, const std::string data);
-    const Node importNode(const Node node, const bool deep = false);
+    const Node importNode(const Node node, const optional<bool> deep = false);
     const Node adoptNode(const Node node);
     const Attr createAttribute(const std::string localName);
-    const Attr createAttributeNS(const optional<std::string> ns, const std::string qualifiedName);
+    const Attr createAttributeNS(const nullable<std::string> ns, const std::string qualifiedName);
     const Event createEvent(const std::string interface);
     const Range createRange();
-    const NodeIterator createNodeIterator(const Node root, const unsigned long whatToShow = 4294967295, const optional<NodeFilter> filter = NULL);
-    const TreeWalker createTreeWalker(const Node root, const unsigned long whatToShow = 4294967295, const optional<NodeFilter> filter = NULL);
+    const NodeIterator createNodeIterator(const Node root, const optional<unsigned long> whatToShow = 4294967295, const optional<nullable<NodeFilter>> filter = NULL);
+    const TreeWalker createTreeWalker(const Node root, const optional<unsigned long> whatToShow = 4294967295, const optional<nullable<NodeFilter>> filter = NULL);
 };
 
 } // namespace dom
+#endif // WASM_DOM_DOCUMENT_H_

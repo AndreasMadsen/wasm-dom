@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_NAMEDNODEMAP_H_
+#define WASM_DOM_NAMEDNODEMAP_H_
+
 #include "attr.hpp"
 #include "../_basic.hpp"
 
@@ -10,13 +12,14 @@ class NamedNodeMap {
     unsigned long get_length() const;
 
     // methods
-    const optional<Attr> item(const unsigned long index);
-    const optional<Attr> getNamedItem(const std::string qualifiedName);
-    const optional<Attr> getNamedItemNS(const optional<std::string> ns, const std::string localName);
-    const optional<Attr> setNamedItem(const Attr attr);
-    const optional<Attr> setNamedItemNS(const Attr attr);
+    const nullable<Attr> item(const unsigned long index);
+    const nullable<Attr> getNamedItem(const std::string qualifiedName);
+    const nullable<Attr> getNamedItemNS(const nullable<std::string> ns, const std::string localName);
+    const nullable<Attr> setNamedItem(const Attr attr);
+    const nullable<Attr> setNamedItemNS(const Attr attr);
     const Attr removeNamedItem(const std::string qualifiedName);
-    const Attr removeNamedItemNS(const optional<std::string> ns, const std::string localName);
+    const Attr removeNamedItemNS(const nullable<std::string> ns, const std::string localName);
 };
 
 } // namespace dom
+#endif // WASM_DOM_NAMEDNODEMAP_H_

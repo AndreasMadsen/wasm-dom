@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_NODELIST_H_
+#define WASM_DOM_NODELIST_H_
+
 #include "node.hpp"
 #include "../_basic.hpp"
 
@@ -10,7 +12,8 @@ class NodeList {
     unsigned long get_length() const;
 
     // methods
-    const optional<Node> item(const unsigned long index);
+    const nullable<Node> item(const unsigned long index);
 };
 
 } // namespace dom
+#endif // WASM_DOM_NODELIST_H_

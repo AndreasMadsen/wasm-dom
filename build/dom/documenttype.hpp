@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_DOCUMENTTYPE_H_
+#define WASM_DOM_DOCUMENTTYPE_H_
+
 #include "node.hpp"
 #include "../_basic.hpp"
 
@@ -13,3 +15,4 @@ class DocumentType : Node {
 };
 
 } // namespace dom
+#endif // WASM_DOM_DOCUMENTTYPE_H_

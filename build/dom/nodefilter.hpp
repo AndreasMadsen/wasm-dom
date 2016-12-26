@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_NODEFILTER_H_
+#define WASM_DOM_NODEFILTER_H_
+
 #include "node.hpp"
 #include "../_basic.hpp"
 
@@ -29,3 +31,4 @@ class NodeFilter {
 };
 
 } // namespace dom
+#endif // WASM_DOM_NODEFILTER_H_

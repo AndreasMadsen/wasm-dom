@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_ADDEVENTLISTENEROPTIONS_H_
+#define WASM_DOM_ADDEVENTLISTENEROPTIONS_H_
+
 #include "eventlisteneroptions.hpp"
 #include "../_basic.hpp"
 
@@ -10,3 +12,4 @@ struct AddEventListenerOptions : EventListenerOptions {
 };
 
 } // namespace dom
+#endif // WASM_DOM_ADDEVENTLISTENEROPTIONS_H_

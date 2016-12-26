@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_EVENT_H_
+#define WASM_DOM_EVENT_H_
+
 #include "eventtarget.hpp"
 #include "../_basic.hpp"
 
@@ -14,8 +16,8 @@ class Event {
 
     // attributes
     std::string get_type() const;
-    optional<EventTarget> get_target() const;
-    optional<EventTarget> get_currentTarget() const;
+    nullable<EventTarget> get_target() const;
+    nullable<EventTarget> get_currentTarget() const;
     unsigned short get_eventPhase() const;
     bool get_bubbles() const;
     bool get_cancelable() const;
@@ -33,3 +35,4 @@ class Event {
 };
 
 } // namespace dom
+#endif // WASM_DOM_EVENT_H_

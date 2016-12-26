@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_SHADOWROOT_H_
+#define WASM_DOM_SHADOWROOT_H_
+
 #include "documentfragment.hpp"
 #include "shadowrootmode.hpp"
 #include "element.hpp"
@@ -14,3 +16,4 @@ class ShadowRoot : DocumentFragment {
 };
 
 } // namespace dom
+#endif // WASM_DOM_SHADOWROOT_H_

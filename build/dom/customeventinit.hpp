@@ -1,6 +1,7 @@
-#pragma once
+#ifndef WASM_DOM_CUSTOMEVENTINIT_H_
+#define WASM_DOM_CUSTOMEVENTINIT_H_
+
 #include "eventinit.hpp"
-#include "any.hpp"
 #include "../_basic.hpp"
 
 namespace dom {
@@ -10,3 +11,4 @@ struct CustomEventInit : EventInit {
 };
 
 } // namespace dom
+#endif // WASM_DOM_CUSTOMEVENTINIT_H_

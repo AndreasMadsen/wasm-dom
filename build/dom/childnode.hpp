@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_CHILDNODE_H_
+#define WASM_DOM_CHILDNODE_H_
+
 #include "node.hpp"
 #include "../_basic.hpp"
 
@@ -7,10 +9,11 @@ namespace dom {
 class ChildNode {
   public:
     // methods
-    const void before(const union<Node, std::string> nodes);
-    const void after(const union<Node, std::string> nodes);
-    const void replaceWith(const union<Node, std::string> nodes);
+    const void before(const multiple<Node, std::string> nodes);
+    const void after(const multiple<Node, std::string> nodes);
+    const void replaceWith(const multiple<Node, std::string> nodes);
     const void remove();
 };
 
 } // namespace dom
+#endif // WASM_DOM_CHILDNODE_H_

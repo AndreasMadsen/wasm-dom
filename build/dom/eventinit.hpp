@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_EVENTINIT_H_
+#define WASM_DOM_EVENTINIT_H_
+
 #include "../_basic.hpp"
 
 namespace dom {
@@ -10,3 +12,4 @@ struct EventInit {
 };
 
 } // namespace dom
+#endif // WASM_DOM_EVENTINIT_H_

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef WASM_DOM_RANGE_H_
+#define WASM_DOM_RANGE_H_
+
 #include "node.hpp"
 #include "short.hpp"
 #include "documentfragment.hpp"
@@ -29,7 +31,7 @@ class Range {
     const void setStartAfter(const Node node);
     const void setEndBefore(const Node node);
     const void setEndAfter(const Node node);
-    const void collapse(const bool toStart = false);
+    const void collapse(const optional<bool> toStart = false);
     const void selectNode(const Node node);
     const void selectNodeContents(const Node node);
     const short compareBoundaryPoints(const unsigned short how, const Range sourceRange);
@@ -46,3 +48,4 @@ class Range {
 };
 
 } // namespace dom
+#endif // WASM_DOM_RANGE_H_

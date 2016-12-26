@@ -1,6 +1,7 @@
-#pragma once
+#ifndef WASM_DOM_CUSTOMEVENT_H_
+#define WASM_DOM_CUSTOMEVENT_H_
+
 #include "event.hpp"
-#include "any.hpp"
 #include "../_basic.hpp"
 
 namespace dom {
@@ -15,3 +16,4 @@ class CustomEvent : Event {
 };
 
 } // namespace dom
+#endif // WASM_DOM_CUSTOMEVENT_H_
